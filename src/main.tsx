@@ -1,11 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import 'leaflet/dist/leaflet.css'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "maplibre-gl/dist/maplibre-gl.css";
+import "./index.css";
+import { App } from "./app/App";
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById("root");
+if (!root) throw new Error("#root element is missing");
+
+createRoot(root).render(
   <StrictMode>
     <App />
   </StrictMode>,
-)
+);
